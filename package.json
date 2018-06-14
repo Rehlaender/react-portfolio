@@ -29,7 +29,7 @@
     "eject": "react-scripts eject",
     "precommit": "lint-staged",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -b master -d build"
+    "deploy": "gh-pages -b gh-pages -d build"
   },
   "homepage": "https://rehlaender.github.io/react-portfolio",
   "lint-staged": {
