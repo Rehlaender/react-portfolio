@@ -16,11 +16,21 @@ export const addNewBee = lastId => dispatch => {
   });
 };
 
-export const changeBeePosition = position => dispatch => {
+export const changeBeeTimer = bee => dispatch => {
+  dispatch({
+    type: 'CHANGE_BEE_TIMER',
+    payload: {
+      bee
+    }
+  });
+};
+
+export const changeBeePosition = data => dispatch => {
   dispatch({
     type: 'CHANGE_BEE_POSITION',
     payload: {
-      position
+      beeId: data.bee.id,
+      position: data.position
     }
   });
 };
