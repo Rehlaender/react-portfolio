@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 
 import happyBee from '../assets/bee/happy_bee.png';
 import angryBee from '../assets/bee/angry_bee.png';
+import happyBeeMirror from '../assets/bee/happy_bee_mirror.png';
+import angryBeeMirror from '../assets/bee/angry_bee_mirror.png';
 
 const happySpeed = 1050;
 const angrySpeed = 425;
@@ -49,15 +51,30 @@ export class Bee extends Component  {
     this.props.changeBeeMood(this.props.bee);
   }
 
+  returnBeeImage(windowDimension, bee) {
+    let halfWindow = windowDimension.width / 2;
+    switch (bee.happy) {
+      case true:
+        return (bee.x < halfWindow) ? happyBee : happyBeeMirror;
+        break;
+      case false:
+        return (bee.x < halfWindow) ? angryBee : angryBeeMirror;
+        break;
+      default:
+        return happyBee;
+    }
+
+  }
+
   componentDidMount() {
     this.tickBeeTimer();
   }
 
   render () {
     let beeSpeed = (this.props.bee.happy) ? happySpeed : angrySpeed;
-    let beeCyanPercentage = (this.props.bee.happy) ? 0 : 100;
+    let beeCyanPercentage = (this.props.bee.happy) ? 0 : 1;
     let beeSaturatePercentage = (this.props.bee.happy) ? 100 : 0;
-
+    let windowDimension = this.returnWindowDimension();
     return(
       <div
         onClick={() => this.changeBeeMood()}
@@ -67,12 +84,22 @@ export class Bee extends Component  {
             top: this.props.bee.y,
             left: this.props.bee.x,
             transition: `all linear ${beeSpeed}ms`,
-            filter: `saturate(${beeSaturatePercentage}%) sepia(${beeCyanPercentage}%)`,
+            MozUserSelect: 'none',
+            WebkitUserSelect:'none',
+            msUserSelect:'none',
+            cursor: 'pointer',
           }
         }>
-
-        <p>{this.props.bee.id}-{beeSpeed}</p>
-        <img src={(this.props.bee.happy) ? happyBee : angryBee} style={{height: 'auto', width: '100px'}}/>
+        <img
+        draggable="false"
+        src={this.returnBeeImage(windowDimension, this.props.bee)}
+        style={{
+          height: 'auto',
+          width: '100px',
+          MozUserSelect: 'none',
+          WebkitUserSelect:'none',
+          msUserSelect:'none',
+        }}/>
       </div>
     );
   }

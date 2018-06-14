@@ -3,20 +3,14 @@ const initialState = {
     {
       id: 0,
       happy: true,
-      speed: 350,
       x: 0,
-      color: 'red',
-      y: 0,
-      timer: 0
+      y: 0
     },
     {
       id: 1,
       happy: false,
-      speed: 350,
       x: 100,
-      color: 'green',
-      y: 100,
-      timer: 0
+      y: 100
     }
   ]
 };
@@ -24,11 +18,8 @@ const initialState = {
 const defaultBee = {
   id: 0,
   happy: true,
-  speed: 10,
   x: 0,
-  color: 'red',
-  y: 0,
-  timer: 0
+  y: 0
 };
 
 export default (state = { ...initialState }, action) => {
@@ -46,7 +37,6 @@ export default (state = { ...initialState }, action) => {
         if (action.payload.beeId === bee.id) {
           bee.x = action.payload.position.x;
           bee.y = action.payload.position.y;
-          bee.timer = 0;
         }
         return bee;
       });
@@ -58,7 +48,6 @@ export default (state = { ...initialState }, action) => {
       const beesWithNewMood = state.bees.map(bee => {
         if (action.payload.bee.id === bee.id) {
           bee.happy = !bee.happy;
-          bee.timer = 0;
         }
         return bee;
       });

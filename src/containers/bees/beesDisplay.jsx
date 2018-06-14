@@ -11,13 +11,14 @@ export const beesDisplay = ({
   changeBeeTimer,
   changeBeePosition,
   }) => (
-    <div className="beesContainer">
+    <div className="beesContainer" style={{overFlow:'hidden'}}>
         <header>
           <h1 style={{ textAlign: 'center' }}>
             bees
           </h1>
-          <p>just a bee dispatcher</p>
-          <button onClick={() => {addNewBee(lastId); console.log('asdf')}}>dispatch a bee</button>
+          <h2>just a bee dispatcher</h2>
+          <p><em>click on them to toggle their mood</em></p>
+          <button onClick={() => {addNewBee(lastId);}}>dispatch a bee</button>
         </header>
         <div className="bees">
         {
