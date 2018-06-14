@@ -1,8 +1,10 @@
 {
   "main.css": "static/css/main.54bebfcd.css",
   "main.css.map": "static/css/main.54bebfcd.css.map",
-  "main.js": "static/js/main.02389226.js",
-  "main.js.map": "static/js/main.02389226.js.map",
-  "static\\media\\angry_bee.png": "static/media/angry_bee.b1579452.png",
-  "static\\media\\happy_bee.png": "static/media/happy_bee.8688a1ae.png"
+  "main.js": "static/js/main.a8e72d3a.js",
+  "main.js.map": "static/js/main.a8e72d3a.js.map",
+  "static\\media\\angry_bee.png": "static/media/angry_bee.afa6cd32.png",
+  "static\\media\\angry_bee_mirror.png": "static/media/angry_bee_mirror.9ec4af77.png",
+  "static\\media\\happy_bee.png": "static/media/happy_bee.8688a1ae.png",
+  "static\\media\\happy_bee_mirror.png": "static/media/happy_bee_mirror.abff573f.png"
 }
