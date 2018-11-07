@@ -1,6 +1,6 @@
 # hi.
 
-just wanted to make something with thunks wrongly implemented
+just wanted to make something with thunks 
 
 ## Installation
 
